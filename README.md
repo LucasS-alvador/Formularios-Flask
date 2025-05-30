@@ -1,5 +1,5 @@
-# Trabalho_Final
-Trabalho final de Programação 1 
+# Trabalho_Flask
+Trabalho de Programação 1 
 <br>
 Participantes:
 <ul>
