@@ -1,7 +1,7 @@
 # Trabalho_Flask
 Trabalho de Programação 1 
 <br>
-Participantes:
+Participantess:
 <ul>
   <li>
     Antônio Henrique Rohling Froehner <a href="https://github.com/tonhao255">[tonhao255]</a>
