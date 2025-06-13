@@ -1,6 +1,7 @@
 from config import *
 from model import *
 
+
 @app.route("/")
 def home():
     return render_template("home.html")
@@ -9,31 +10,33 @@ def home():
 def about():
     return render_template("about.html")
 
-@app.route("/listar_pessoas")
-def listar_pessoas():
+@app.route("/listar_carros")
+def listar_carros():
     with db_session:
-        # obtém as pessoas
-        pessoas = Pessoa.select() 
-        return render_template("listar_pessoas.html", pessoas=pessoas)
+        carros = Carro.select() 
+        return render_template("listar_carros.html", carros=carros)
 
-@app.route("/form_adicionar_pessoa")
-def form_adicionar_pessoa():
-    return render_template("form_adicionar_pessoa.html")
+@app.route("/form_adicionar_carro")
+def form_adicionar_carro():
+    return render_template("form_adicionar_carro.html")
 
-@app.route("/adicionar_pessoa")
-def adicionar_pessoa():
-    # obter os parâmetros
-    nome = request.args.get("nome")
-    email = request.args.get("email")
-    telefone = request.args.get("telefone")
-    # salvar
+@app.route("/adicionar_carro")
+def adicionar_carro():
+    marca = request.args.get("marca")
+    modelo = request.args.get("modelo")
+    ano = request.args.get("ano")
+    quilometros = request.args.get("quilometros")
+    disponivel = request.args.get("disponivel")
+    preco = request.args.get("preco")
+    cor = request.args.get("cor")
+    dataRevisao = request.args.get("dataRevisao")
+    placa = request.args.get("placa")
+    numeroPortas = request.args.get("numeroPortas")
+
     with db_session:
-        # criar a pessoa
-        p = Pessoa(**request.args)
-        # salvar
+        c = Carro(**request.args)
         commit()
-        # encaminhar de volta para a listagem
-        return redirect("listar_pessoas") 
+        return redirect("listar_carros") 
 app.run(debug=True)
 '''
 run:

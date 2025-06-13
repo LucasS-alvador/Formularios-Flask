@@ -1,0 +1,57 @@
+{% extends 'main_template.html' %}
+
+{% block header %}
+<h1>{% block title %}Cadastrar Carro{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+
+<form action="adicionar_carro"class="car-form">
+  <div class="form-row">
+    <label for="modelo">Modelo:</label>
+    <input type="text" id="modelo" name="modelo" value="Uno" required>
+  </div>
+
+  <div class="form-row">
+    <label for="marca">Marca:</label>
+    <input type="text" id="marca" name="marca" value="Fiat" required>
+
+    <label for="ano">Ano:</label>
+    <input type="number" id="ano" name="ano" value="2010" min="1900" max="2100" required>
+
+    <label for="placa">Placa:</label>
+    <input type="text" id="placa" name="placa" value="ABC-1234" maxlength="8" required>
+  </div>
+
+  <div class="form-row">
+    <label for="numeroPortas">Portas:</label>
+    <input type="number" id="numeroPortas" name="numeroPortas" value="4" min="1" max="10" required>
+
+    <label for="cor">Cor:</label>
+    <select name="cor" id="cor" required>
+      <option value="prata">Prata</option>
+      <option value="preto">Preto</option>
+      <option value="branco">Branco</option>
+      <option value="vermelho">Vermelho</option>
+    </select>
+
+    <label for="quilometros">Quilômetros:</label>
+    <input type="number" id="quilometros" name="quilometros" value="10000" min="0" required>
+  </div>
+
+  <div class="form-row">
+    <label for="disponivel">Disponível:</label>
+    <input type="checkbox" id="disponivel" name="disponivel" value="True">
+
+    <label for="preco">Preço:</label>
+    <input type="number" id="preco" name="preco" value="10000" min="0" step="0.01" required>
+
+    <label for="dataRevisao">Data Revisão:</label>
+    <input type="date" id="dataRevisao" name="dataRevisao" value="2022-01-01" required>
+  </div>
+
+  <div class="form-row btn-row">
+    <button class="btn-primary">Cadastrar</button>
+  </div>
+</form>
+{% endblock %}

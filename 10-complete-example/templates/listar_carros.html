@@ -1,0 +1,42 @@
+{% extends 'main_template.html' %}
+
+{% block header %}
+  <h1>{% block title %}Listagem de Carros Cadastrados{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+
+<table class="car-table">
+  <thead>
+    <tr>
+      <th>Marca</th>
+      <th>Modelo</th>
+      <th>Ano</th>
+      <th>Quilômetros</th>
+      <th>Disponível</th>
+      <th>Preço</th>
+      <th>Cor</th>
+      <th>Data de Revisão</th>
+      <th>Placa</th>
+      <th>Número de Portas</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for c in carros %}
+    <tr>
+      <td>{{ c.marca }}</td>
+      <td>{{ c.modelo }}</td>
+      <td>{{ c.ano }}</td>
+      <td>{{ c.quilometros }}</td>
+      <td>{{ c.disponivel }}</td>
+      <td>{{ c.preco }}</td>
+      <td>{{ c.cor }}</td>
+      <td>{{ c.dataRevisao }}</td>
+      <td>{{ c.placa }}</td>
+      <td>{{ c.numeroPortas }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+{% endblock %}
