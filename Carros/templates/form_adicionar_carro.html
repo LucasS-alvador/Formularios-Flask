@@ -6,7 +6,7 @@
 
 {% block content %}
 
-<form action="adicionar_carro"class="car-form">
+<form action="adicionar_carro"class="car-form"method="post"> <!-- ADICIONEI method="post" (ASS: Tonhao255)-->
   <div class="form-row">
     <label for="modelo">Modelo:</label>
     <input type="text" id="modelo" name="modelo" value="Uno" required>
@@ -33,6 +33,11 @@
       <option value="preto">Preto</option>
       <option value="branco">Branco</option>
       <option value="vermelho">Vermelho</option>
+      <option value="amarelo">Amarelo</option>
+      <option value="azul">Azul</option>
+      <option value="verde">Verde</option>
+      <option value="rosa">Rosa</option>
+      <option value="azul bebê jujuba de maçã verde">Azul Bebê JuJuba de Maçã Verde</option>
     </select>
 
     <label for="quilometros">Quilômetros:</label>
