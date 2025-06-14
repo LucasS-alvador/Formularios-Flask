@@ -84,6 +84,16 @@ def adicionar_carro():
 
         commit()
         return redirect("listar_carros")
+    
+    # -------- Novo 0.3 -----/
+@app.route("/excluir_carro/<int:carro_id>", methods=["POST"])
+def excluir_carro(carro_id):
+    with db_session:
+        carro = Carro.get(id=carro_id)
+        if carro:
+            carro.delete()
+            commit()
+    return redirect("/listar_carros")
 
 app.run(debug=True)
 '''
