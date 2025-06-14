@@ -19,6 +19,8 @@
       <th>Data de Revisão</th>
       <th>Placa</th>
       <th>Número de Portas</th>
+      <!-- novo 0.3 markus -->
+      <th>Ações</th>
     </tr>
   </thead>
   <tbody>
@@ -34,6 +36,13 @@
       <td>{{ c.dataRevisao }}</td>
       <td>{{ c.placa }}</td>
       <td>{{ c.numeroPortas }}</td>
+      <!-- novo 0.3 markus -->
+      <td>
+        <form action="{{ url_for('excluir_carro', carro_id=c.id) }}" method="post" style="display:inline;">
+          <button type="submit" class="btn-primary" onclick="return confirm('Tem certeza que deseja excluir este carro?')">Excluir</button>
+        </form>
+      </td>
+      <!-- novo 0.3 markus -->
     </tr>
     {% endfor %}
   </tbody>
